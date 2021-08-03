@@ -1,5 +1,4 @@
 // variavel principal para chamar o tr da tabela
-let titulo = document.querySelector('.titulo').textContent = 'Aparecida Nutricionista'
 let nomeCliente = document.querySelector(".nomeCliente").textContent = 'Meus Clientes'
 let pacientes = document.querySelectorAll(".paciente");
 
@@ -26,21 +25,38 @@ for (let i = 0; i < pacientes.length; i++) {
     //condicional em if/ else
     if(peso <= 0 || peso >= 500){
         tdimc.textContent = "Peso invalido";
-        paciente.style.backgroundColor = "red"
+        //paciente.style.backgroundColor = "lightcoral"
         tdpeso.style.color = "yellow"
-        tdpeso.style.fontSize = "20px"
+        paciente.classList.add("paciente-invalido")
         pesoValido = false;
         
     }else if(altura <= 0 || altura >= 3.00){
         tdimc.textContent = "Altura invalida";
-        paciente.style.backgroundColor = "red"
+        //paciente.style.backgroundColor = "lightcoral"
         tdaltura.style.color = "yellow"
+        paciente.classList.add("paciente-invalido")
         alturaValida = false;
 
     }else if(alturaValida && pesoValido){
         tdimc.textContent = imc
     }
         
-    }
+}
+
+//let titulo = document.querySelector('.titulo').addEventListener("click", escutaMensagem)
+
+
+//function escutaMensagem(){
+//    console.log("Eu fui clicado")
+//}
+let titulo = document.querySelector('.titulo').addEventListener("click", function(){
+    console.log("Fui clicado")
+})
+
+let botao = document.querySelector("#adicionar-paciente").addEventListener("click", function(){
+    console.log("eu, cliquei no botão")
+})
+
+
 
 
