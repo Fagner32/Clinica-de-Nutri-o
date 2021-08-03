@@ -26,10 +26,17 @@ for (let i = 0; i < pacientes.length; i++) {
     //condicional em if/ else
     if(peso <= 0 || peso >= 500){
         tdimc.textContent = "Peso invalido";
+        paciente.style.backgroundColor = "red"
+        tdpeso.style.color = "yellow"
+        tdpeso.style.fontSize = "20px"
         pesoValido = false;
+        
     }else if(altura <= 0 || altura >= 3.00){
         tdimc.textContent = "Altura invalida";
+        paciente.style.backgroundColor = "red"
+        tdaltura.style.color = "yellow"
         alturaValida = false;
+
     }else if(alturaValida && pesoValido){
         tdimc.textContent = imc
     }
